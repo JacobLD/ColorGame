@@ -1,5 +1,8 @@
 //Math.floor(Math.random() * 256); random int from 0-255
 
+/* Masthead */
+var masthead = document.getElementById("masthead");
+
 /* Text Fields */
 var rgbText = document.getElementById("rgbText");
 
@@ -95,20 +98,63 @@ function removeSolid(btn){
 
 function createColorListeners(){
     if(!gameOver){
-        for(var i = 0; i < 6; i++){
-            var color = colors[i];
-            console.log(color.id);
-            if(i == winningIndex){
-                color.addEventListener("click", function(){
-                    //winning set
-                });
+        colors[0].addEventListener("click", function(){
+            if(winningIndex == 0){
+                win();
             } else {
-                color.addEventListener("click", function(){
-                    $("#" + color.id).fadeTo(1000, 0.1, null);
-                });
+                $("#" + colors[0].id).fadeTo(1000, 0.1, null);
             }
-        }
+        });
+
+        colors[1].addEventListener("click", function(){
+            if(winningIndex == 1){
+                win();
+            } else {
+                $("#" + colors[1].id).fadeTo(1000, 0.1, null);
+            }
+        });
+
+        colors[2].addEventListener("click", function(){
+            if(winningIndex == 2){
+                win();
+            } else {
+                $("#" + colors[2].id).fadeTo(1000, 0.1, null);
+            }
+        });
+
+        colors[3].addEventListener("click", function(){
+            if(winningIndex == 3){
+                win();
+            } else {
+                $("#" + colors[3].id).fadeTo(1000, 0.1, null);
+            }
+        });
+
+        colors[4].addEventListener("click", function(){
+            if(winningIndex == 4){
+                win();
+            } else {
+                $("#" + colors[4].id).fadeTo(1000, 0.1, null);
+            }
+        });
+
+        colors[5].addEventListener("click", function(){
+            if(winningIndex == 5){
+                win();
+            } else {
+                $("#" + colors[5].id).fadeTo(1000, 0.1, null);
+            }
+        });
     }
+}
+
+function win(){
+    var winColor = colors[winningIndex].style.backgroundColor;
+    colors.forEach(color => {
+        color.style.backgroundColor = winColor;
+        $("#" + color.id).fadeTo(1000, 1, null);
+    });
+    masthead.style.backgroundColor = winColor;
 }
 
 newColorsbtn.addEventListener("click", function(){
