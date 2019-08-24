@@ -1,0 +1,49 @@
+div p {
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+div p:nth-of-type(3) {
+    padding-bottom: .5rem;
+}
+
+#rgb {
+    font-size: 4rem;
+}
+
+#masthead {
+    background-color: #3c76ae;
+}
+
+#buttons {
+    background-color: white;
+}
+
+body {
+    background-color: rgb(48, 48, 48);
+    user-select: none;
+}
+
+.color-row div div {
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.color-row {
+    height: 200px;;
+}
+
+#buttons div div div {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #3c76ae;
+}
+
+#buttons div div div:hover {
+    background-color: #3c76ae;
+    color: white;
+}
